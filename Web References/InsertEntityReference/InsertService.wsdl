@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CreateNewOrganization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestedId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestedSoftware" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SoftwareUniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eTin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityOriginator" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LegalStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TradeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IncorporationNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewOrganizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewOrganizationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewIndividual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestedId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestedSoftware" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SoftwareUniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eTin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityOriginator" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FatherName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MotherName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BirthCertificateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DrivingLicenseNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewIndividualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewIndividualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eTin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchEntityResult" type="tns:ArrayOfEntities" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEntities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Entities" nillable="true" type="tns:Entities" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Entities">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseModel">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntityType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="eTin" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntityOriginator" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AddressList" type="tns:ArrayOfAddress" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocumentList" type="tns:ArrayOfDocument" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsNew" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDirty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDelete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CheckDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Document">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseModel">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DocumentId" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="DocumentSerial" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReferenceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReferenceType" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DocumentApprovalDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeId" type="s:short" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocumentTypeName_VW" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocumentTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocumentPath" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AddressTypes">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseModel">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AddressTypeId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AddressTypeName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AddressTypes">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AddressId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EntityId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SerialNo" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CountryId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DivisionId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DivisionName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DistrictId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DistrictName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ThanaId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ThanaName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PostOfficeId" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="PostOfficeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AddressDetails" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocument">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Document" nillable="true" type="tns:Document" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchOrganization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TradeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eTin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IncorporationNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchOrganizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchOrganizationResult" type="tns:ArrayOfOrganization" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrganization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Organization" nillable="true" type="tns:Organization" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Organization">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entities">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LegalStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LegalStatusName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TradeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IncorporationNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SearchIndividual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BirthCertificateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eTin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DrivingLicenseNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchIndividualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchIndividualResult" type="tns:ArrayOfIndividual" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIndividual">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Individual" nillable="true" type="tns:Individual" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Individual">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Entities">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="FatherName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MotherName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateOfBirth" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="BirthCertificateNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Nid" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DrivingLicenseNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InsertEntityAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AddressTypeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DivisionId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DistrictId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ThanaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostOfficeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressDetails" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEntityAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertEntityAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEntityDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferenceType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentApprovalDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocumentTypeId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEntityDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertEntityDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfEntities" nillable="true" type="tns:ArrayOfEntities" />
+      <s:element name="ArrayOfOrganization" nillable="true" type="tns:ArrayOfOrganization" />
+      <s:element name="ArrayOfIndividual" nillable="true" type="tns:ArrayOfIndividual" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateNewOrganizationSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewOrganization" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrganizationSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewIndividualSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewIndividual" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewIndividualSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewIndividualResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchEntity" />
+  </wsdl:message>
+  <wsdl:message name="SearchEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrganizationSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchOrganization" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrganizationSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchIndividualSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchIndividual" />
+  </wsdl:message>
+  <wsdl:message name="SearchIndividualSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchIndividualResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEntityAddress" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEntityAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEntityDocument" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEntityDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrganizationHttpGetIn">
+    <wsdl:part name="RequestedId" type="s:string" />
+    <wsdl:part name="RequestedSoftware" type="s:string" />
+    <wsdl:part name="SoftwareUniqueId" type="s:string" />
+    <wsdl:part name="RequestBy" type="s:string" />
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+    <wsdl:part name="EntityOriginator" type="s:string" />
+    <wsdl:part name="LegalStatus" type="s:string" />
+    <wsdl:part name="TradeName" type="s:string" />
+    <wsdl:part name="IncorporationNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrganizationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewIndividualHttpGetIn">
+    <wsdl:part name="RequestedId" type="s:string" />
+    <wsdl:part name="RequestedSoftware" type="s:string" />
+    <wsdl:part name="SoftwareUniqueId" type="s:string" />
+    <wsdl:part name="RequestBy" type="s:string" />
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+    <wsdl:part name="EntityOriginator" type="s:string" />
+    <wsdl:part name="FatherName" type="s:string" />
+    <wsdl:part name="MotherName" type="s:string" />
+    <wsdl:part name="DateOfBirth" type="s:string" />
+    <wsdl:part name="BirthCertificateNumber" type="s:string" />
+    <wsdl:part name="Nid" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="DrivingLicenseNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewIndividualHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchEntityHttpGetIn">
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="EntityType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchEntityHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEntities" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrganizationHttpGetIn">
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="TradeName" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+    <wsdl:part name="IncorporationNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrganizationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrganization" />
+  </wsdl:message>
+  <wsdl:message name="SearchIndividualHttpGetIn">
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="BirthCertificateNumber" type="s:string" />
+    <wsdl:part name="Nid" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+    <wsdl:part name="DrivingLicenseNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchIndividualHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfIndividual" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityAddressHttpGetIn">
+    <wsdl:part name="RequestId" type="s:string" />
+    <wsdl:part name="AddressTypeId" type="s:string" />
+    <wsdl:part name="DivisionId" type="s:string" />
+    <wsdl:part name="DistrictId" type="s:string" />
+    <wsdl:part name="ThanaId" type="s:string" />
+    <wsdl:part name="PostOfficeId" type="s:string" />
+    <wsdl:part name="AddressDetails" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityDocumentHttpGetIn">
+    <wsdl:part name="RequestId" type="s:string" />
+    <wsdl:part name="ReferenceType" type="s:string" />
+    <wsdl:part name="DocumentApprovalDate" type="s:string" />
+    <wsdl:part name="DocumentTypeId" type="s:string" />
+    <wsdl:part name="DocumentTitle" type="s:string" />
+    <wsdl:part name="DocumentPath" type="s:string" />
+    <wsdl:part name="RequestBy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityDocumentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrganizationHttpPostIn">
+    <wsdl:part name="RequestedId" type="s:string" />
+    <wsdl:part name="RequestedSoftware" type="s:string" />
+    <wsdl:part name="SoftwareUniqueId" type="s:string" />
+    <wsdl:part name="RequestBy" type="s:string" />
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+    <wsdl:part name="EntityOriginator" type="s:string" />
+    <wsdl:part name="LegalStatus" type="s:string" />
+    <wsdl:part name="TradeName" type="s:string" />
+    <wsdl:part name="IncorporationNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewOrganizationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewIndividualHttpPostIn">
+    <wsdl:part name="RequestedId" type="s:string" />
+    <wsdl:part name="RequestedSoftware" type="s:string" />
+    <wsdl:part name="SoftwareUniqueId" type="s:string" />
+    <wsdl:part name="RequestBy" type="s:string" />
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+    <wsdl:part name="EntityOriginator" type="s:string" />
+    <wsdl:part name="FatherName" type="s:string" />
+    <wsdl:part name="MotherName" type="s:string" />
+    <wsdl:part name="DateOfBirth" type="s:string" />
+    <wsdl:part name="BirthCertificateNumber" type="s:string" />
+    <wsdl:part name="Nid" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="DrivingLicenseNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewIndividualHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchEntityHttpPostIn">
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="EntityType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchEntityHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEntities" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrganizationHttpPostIn">
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="TradeName" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+    <wsdl:part name="IncorporationNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrganizationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfOrganization" />
+  </wsdl:message>
+  <wsdl:message name="SearchIndividualHttpPostIn">
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EntityId" type="s:string" />
+    <wsdl:part name="BirthCertificateNumber" type="s:string" />
+    <wsdl:part name="Nid" type="s:string" />
+    <wsdl:part name="PassportNumber" type="s:string" />
+    <wsdl:part name="eTin" type="s:string" />
+    <wsdl:part name="DrivingLicenseNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchIndividualHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfIndividual" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityAddressHttpPostIn">
+    <wsdl:part name="RequestId" type="s:string" />
+    <wsdl:part name="AddressTypeId" type="s:string" />
+    <wsdl:part name="DivisionId" type="s:string" />
+    <wsdl:part name="DistrictId" type="s:string" />
+    <wsdl:part name="ThanaId" type="s:string" />
+    <wsdl:part name="PostOfficeId" type="s:string" />
+    <wsdl:part name="AddressDetails" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityDocumentHttpPostIn">
+    <wsdl:part name="RequestId" type="s:string" />
+    <wsdl:part name="ReferenceType" type="s:string" />
+    <wsdl:part name="DocumentApprovalDate" type="s:string" />
+    <wsdl:part name="DocumentTypeId" type="s:string" />
+    <wsdl:part name="DocumentTitle" type="s:string" />
+    <wsdl:part name="DocumentPath" type="s:string" />
+    <wsdl:part name="RequestBy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertEntityDocumentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="InsertServiceSoap">
+    <wsdl:operation name="CreateNewOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Inserts a new Entity of type Organization</wsdl:documentation>
+      <wsdl:input message="tns:CreateNewOrganizationSoapIn" />
+      <wsdl:output message="tns:CreateNewOrganizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewIndividual">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Inserts a new Entity of type Individual</wsdl:documentation>
+      <wsdl:input message="tns:CreateNewIndividualSoapIn" />
+      <wsdl:output message="tns:CreateNewIndividualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for all basic info of entity</wsdl:documentation>
+      <wsdl:input message="tns:SearchEntitySoapIn" />
+      <wsdl:output message="tns:SearchEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for Organization</wsdl:documentation>
+      <wsdl:input message="tns:SearchOrganizationSoapIn" />
+      <wsdl:output message="tns:SearchOrganizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchIndividual">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for Individual</wsdl:documentation>
+      <wsdl:input message="tns:SearchIndividualSoapIn" />
+      <wsdl:output message="tns:SearchIndividualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service is for Inserting Entity Address</wsdl:documentation>
+      <wsdl:input message="tns:InsertEntityAddressSoapIn" />
+      <wsdl:output message="tns:InsertEntityAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service is for Inserting Entity documents</wsdl:documentation>
+      <wsdl:input message="tns:InsertEntityDocumentSoapIn" />
+      <wsdl:output message="tns:InsertEntityDocumentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="InsertServiceHttpGet">
+    <wsdl:operation name="CreateNewOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Inserts a new Entity of type Organization</wsdl:documentation>
+      <wsdl:input message="tns:CreateNewOrganizationHttpGetIn" />
+      <wsdl:output message="tns:CreateNewOrganizationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewIndividual">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Inserts a new Entity of type Individual</wsdl:documentation>
+      <wsdl:input message="tns:CreateNewIndividualHttpGetIn" />
+      <wsdl:output message="tns:CreateNewIndividualHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for all basic info of entity</wsdl:documentation>
+      <wsdl:input message="tns:SearchEntityHttpGetIn" />
+      <wsdl:output message="tns:SearchEntityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for Organization</wsdl:documentation>
+      <wsdl:input message="tns:SearchOrganizationHttpGetIn" />
+      <wsdl:output message="tns:SearchOrganizationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchIndividual">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for Individual</wsdl:documentation>
+      <wsdl:input message="tns:SearchIndividualHttpGetIn" />
+      <wsdl:output message="tns:SearchIndividualHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service is for Inserting Entity Address</wsdl:documentation>
+      <wsdl:input message="tns:InsertEntityAddressHttpGetIn" />
+      <wsdl:output message="tns:InsertEntityAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service is for Inserting Entity documents</wsdl:documentation>
+      <wsdl:input message="tns:InsertEntityDocumentHttpGetIn" />
+      <wsdl:output message="tns:InsertEntityDocumentHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="InsertServiceHttpPost">
+    <wsdl:operation name="CreateNewOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Inserts a new Entity of type Organization</wsdl:documentation>
+      <wsdl:input message="tns:CreateNewOrganizationHttpPostIn" />
+      <wsdl:output message="tns:CreateNewOrganizationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewIndividual">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Inserts a new Entity of type Individual</wsdl:documentation>
+      <wsdl:input message="tns:CreateNewIndividualHttpPostIn" />
+      <wsdl:output message="tns:CreateNewIndividualHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for all basic info of entity</wsdl:documentation>
+      <wsdl:input message="tns:SearchEntityHttpPostIn" />
+      <wsdl:output message="tns:SearchEntityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for Organization</wsdl:documentation>
+      <wsdl:input message="tns:SearchOrganizationHttpPostIn" />
+      <wsdl:output message="tns:SearchOrganizationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchIndividual">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service Searches for Individual</wsdl:documentation>
+      <wsdl:input message="tns:SearchIndividualHttpPostIn" />
+      <wsdl:output message="tns:SearchIndividualHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service is for Inserting Entity Address</wsdl:documentation>
+      <wsdl:input message="tns:InsertEntityAddressHttpPostIn" />
+      <wsdl:output message="tns:InsertEntityAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service is for Inserting Entity documents</wsdl:documentation>
+      <wsdl:input message="tns:InsertEntityDocumentHttpPostIn" />
+      <wsdl:output message="tns:InsertEntityDocumentHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InsertServiceSoap" type="tns:InsertServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNewOrganization">
+      <soap:operation soapAction="http://tempuri.org/CreateNewOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewIndividual">
+      <soap:operation soapAction="http://tempuri.org/CreateNewIndividual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntity">
+      <soap:operation soapAction="http://tempuri.org/SearchEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrganization">
+      <soap:operation soapAction="http://tempuri.org/SearchOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchIndividual">
+      <soap:operation soapAction="http://tempuri.org/SearchIndividual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityAddress">
+      <soap:operation soapAction="http://tempuri.org/InsertEntityAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityDocument">
+      <soap:operation soapAction="http://tempuri.org/InsertEntityDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InsertServiceSoap12" type="tns:InsertServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNewOrganization">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewIndividual">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewIndividual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntity">
+      <soap12:operation soapAction="http://tempuri.org/SearchEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrganization">
+      <soap12:operation soapAction="http://tempuri.org/SearchOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchIndividual">
+      <soap12:operation soapAction="http://tempuri.org/SearchIndividual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityAddress">
+      <soap12:operation soapAction="http://tempuri.org/InsertEntityAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityDocument">
+      <soap12:operation soapAction="http://tempuri.org/InsertEntityDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InsertServiceHttpGet" type="tns:InsertServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CreateNewOrganization">
+      <http:operation location="/CreateNewOrganization" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewIndividual">
+      <http:operation location="/CreateNewIndividual" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntity">
+      <http:operation location="/SearchEntity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrganization">
+      <http:operation location="/SearchOrganization" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchIndividual">
+      <http:operation location="/SearchIndividual" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityAddress">
+      <http:operation location="/InsertEntityAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityDocument">
+      <http:operation location="/InsertEntityDocument" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InsertServiceHttpPost" type="tns:InsertServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CreateNewOrganization">
+      <http:operation location="/CreateNewOrganization" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewIndividual">
+      <http:operation location="/CreateNewIndividual" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntity">
+      <http:operation location="/SearchEntity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrganization">
+      <http:operation location="/SearchOrganization" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchIndividual">
+      <http:operation location="/SearchIndividual" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityAddress">
+      <http:operation location="/InsertEntityAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEntityDocument">
+      <http:operation location="/InsertEntityDocument" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InsertService">
+    <wsdl:port name="InsertServiceSoap" binding="tns:InsertServiceSoap">
+      <soap:address location="http://192.168.1.232:1100/EntityDirectory/EntityDirectory/InsertService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InsertServiceSoap12" binding="tns:InsertServiceSoap12">
+      <soap12:address location="http://192.168.1.232:1100/EntityDirectory/EntityDirectory/InsertService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InsertServiceHttpGet" binding="tns:InsertServiceHttpGet">
+      <http:address location="http://192.168.1.232:1100/EntityDirectory/EntityDirectory/InsertService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InsertServiceHttpPost" binding="tns:InsertServiceHttpPost">
+      <http:address location="http://192.168.1.232:1100/EntityDirectory/EntityDirectory/InsertService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

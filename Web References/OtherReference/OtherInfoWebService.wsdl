@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAddressType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddressTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAddressTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLegalStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLegalStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLegalStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAddressTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAddressType" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAddressTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentType" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLegalStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLegalStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressTypeHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalStatusHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressTypeHttpPostIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressTypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeHttpPostIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentTypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalStatusHttpPostIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLegalStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="OtherInfoWebServiceSoap">
+    <wsdl:operation name="GetAddressType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Address Type List</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressTypeSoapIn" />
+      <wsdl:output message="tns:GetAddressTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Document Type List</wsdl:documentation>
+      <wsdl:input message="tns:GetDocumentTypeSoapIn" />
+      <wsdl:output message="tns:GetDocumentTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Legal Status List</wsdl:documentation>
+      <wsdl:input message="tns:GetLegalStatusSoapIn" />
+      <wsdl:output message="tns:GetLegalStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OtherInfoWebServiceHttpGet">
+    <wsdl:operation name="GetAddressType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Address Type List</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressTypeHttpGetIn" />
+      <wsdl:output message="tns:GetAddressTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Document Type List</wsdl:documentation>
+      <wsdl:input message="tns:GetDocumentTypeHttpGetIn" />
+      <wsdl:output message="tns:GetDocumentTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Legal Status List</wsdl:documentation>
+      <wsdl:input message="tns:GetLegalStatusHttpGetIn" />
+      <wsdl:output message="tns:GetLegalStatusHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OtherInfoWebServiceHttpPost">
+    <wsdl:operation name="GetAddressType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Address Type List</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressTypeHttpPostIn" />
+      <wsdl:output message="tns:GetAddressTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Document Type List</wsdl:documentation>
+      <wsdl:input message="tns:GetDocumentTypeHttpPostIn" />
+      <wsdl:output message="tns:GetDocumentTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Legal Status List</wsdl:documentation>
+      <wsdl:input message="tns:GetLegalStatusHttpPostIn" />
+      <wsdl:output message="tns:GetLegalStatusHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OtherInfoWebServiceSoap" type="tns:OtherInfoWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAddressType">
+      <soap:operation soapAction="http://tempuri.org/GetAddressType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentType">
+      <soap:operation soapAction="http://tempuri.org/GetDocumentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalStatus">
+      <soap:operation soapAction="http://tempuri.org/GetLegalStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OtherInfoWebServiceSoap12" type="tns:OtherInfoWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAddressType">
+      <soap12:operation soapAction="http://tempuri.org/GetAddressType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentType">
+      <soap12:operation soapAction="http://tempuri.org/GetDocumentType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetLegalStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OtherInfoWebServiceHttpGet" type="tns:OtherInfoWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetAddressType">
+      <http:operation location="/GetAddressType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentType">
+      <http:operation location="/GetDocumentType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalStatus">
+      <http:operation location="/GetLegalStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OtherInfoWebServiceHttpPost" type="tns:OtherInfoWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetAddressType">
+      <http:operation location="/GetAddressType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentType">
+      <http:operation location="/GetDocumentType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLegalStatus">
+      <http:operation location="/GetLegalStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OtherInfoWebService">
+    <wsdl:port name="OtherInfoWebServiceSoap" binding="tns:OtherInfoWebServiceSoap">
+      <soap:address location="http://192.168.1.232:1100/SharedData/SharedServices/OtherInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OtherInfoWebServiceSoap12" binding="tns:OtherInfoWebServiceSoap12">
+      <soap12:address location="http://192.168.1.232:1100/SharedData/SharedServices/OtherInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OtherInfoWebServiceHttpGet" binding="tns:OtherInfoWebServiceHttpGet">
+      <http:address location="http://192.168.1.232:1100/SharedData/SharedServices/OtherInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OtherInfoWebServiceHttpPost" binding="tns:OtherInfoWebServiceHttpPost">
+      <http:address location="http://192.168.1.232:1100/SharedData/SharedServices/OtherInfoWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

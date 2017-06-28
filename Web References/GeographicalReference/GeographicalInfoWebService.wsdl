@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDivision">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountryId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDivisionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDivisionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistrict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DivisionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDistrictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDistrictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetThana">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DistrictId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetThanaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetThanaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostOffice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ThanaId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostOfficeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPostOfficeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountry" />
+  </wsdl:message>
+  <wsdl:message name="GetCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDivisionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDivision" />
+  </wsdl:message>
+  <wsdl:message name="GetDivisionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDistrict" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDistrictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetThanaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetThana" />
+  </wsdl:message>
+  <wsdl:message name="GetThanaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetThanaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPostOfficeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPostOffice" />
+  </wsdl:message>
+  <wsdl:message name="GetPostOfficeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPostOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDivisionHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="CountryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDivisionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="DivisionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetThanaHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="DistrictId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetThanaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetPostOfficeHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ThanaId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPostOfficeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryHttpPostIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDivisionHttpPostIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="CountryId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDivisionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictHttpPostIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="DivisionId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDistrictHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetThanaHttpPostIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="DistrictId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetThanaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetPostOfficeHttpPostIn">
+    <wsdl:part name="key" type="s:string" />
+    <wsdl:part name="ThanaId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPostOfficeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="GeographicalInfoWebServiceSoap">
+    <wsdl:operation name="GetCountry">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Country List</wsdl:documentation>
+      <wsdl:input message="tns:GetCountrySoapIn" />
+      <wsdl:output message="tns:GetCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Division List</wsdl:documentation>
+      <wsdl:input message="tns:GetDivisionSoapIn" />
+      <wsdl:output message="tns:GetDivisionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides District List</wsdl:documentation>
+      <wsdl:input message="tns:GetDistrictSoapIn" />
+      <wsdl:output message="tns:GetDistrictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThana">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Thana List</wsdl:documentation>
+      <wsdl:input message="tns:GetThanaSoapIn" />
+      <wsdl:output message="tns:GetThanaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostOffice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Post Office List</wsdl:documentation>
+      <wsdl:input message="tns:GetPostOfficeSoapIn" />
+      <wsdl:output message="tns:GetPostOfficeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GeographicalInfoWebServiceHttpGet">
+    <wsdl:operation name="GetCountry">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Country List</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryHttpGetIn" />
+      <wsdl:output message="tns:GetCountryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Division List</wsdl:documentation>
+      <wsdl:input message="tns:GetDivisionHttpGetIn" />
+      <wsdl:output message="tns:GetDivisionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides District List</wsdl:documentation>
+      <wsdl:input message="tns:GetDistrictHttpGetIn" />
+      <wsdl:output message="tns:GetDistrictHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThana">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Thana List</wsdl:documentation>
+      <wsdl:input message="tns:GetThanaHttpGetIn" />
+      <wsdl:output message="tns:GetThanaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostOffice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Post Office List</wsdl:documentation>
+      <wsdl:input message="tns:GetPostOfficeHttpGetIn" />
+      <wsdl:output message="tns:GetPostOfficeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GeographicalInfoWebServiceHttpPost">
+    <wsdl:operation name="GetCountry">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Country List</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryHttpPostIn" />
+      <wsdl:output message="tns:GetCountryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Division List</wsdl:documentation>
+      <wsdl:input message="tns:GetDivisionHttpPostIn" />
+      <wsdl:output message="tns:GetDivisionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides District List</wsdl:documentation>
+      <wsdl:input message="tns:GetDistrictHttpPostIn" />
+      <wsdl:output message="tns:GetDistrictHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThana">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Thana List</wsdl:documentation>
+      <wsdl:input message="tns:GetThanaHttpPostIn" />
+      <wsdl:output message="tns:GetThanaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostOffice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Provides Post Office List</wsdl:documentation>
+      <wsdl:input message="tns:GetPostOfficeHttpPostIn" />
+      <wsdl:output message="tns:GetPostOfficeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GeographicalInfoWebServiceSoap" type="tns:GeographicalInfoWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCountry">
+      <soap:operation soapAction="http://tempuri.org/GetCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <soap:operation soapAction="http://tempuri.org/GetDivision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <soap:operation soapAction="http://tempuri.org/GetDistrict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThana">
+      <soap:operation soapAction="http://tempuri.org/GetThana" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostOffice">
+      <soap:operation soapAction="http://tempuri.org/GetPostOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GeographicalInfoWebServiceSoap12" type="tns:GeographicalInfoWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCountry">
+      <soap12:operation soapAction="http://tempuri.org/GetCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <soap12:operation soapAction="http://tempuri.org/GetDivision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <soap12:operation soapAction="http://tempuri.org/GetDistrict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThana">
+      <soap12:operation soapAction="http://tempuri.org/GetThana" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostOffice">
+      <soap12:operation soapAction="http://tempuri.org/GetPostOffice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GeographicalInfoWebServiceHttpGet" type="tns:GeographicalInfoWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetCountry">
+      <http:operation location="/GetCountry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <http:operation location="/GetDivision" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <http:operation location="/GetDistrict" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThana">
+      <http:operation location="/GetThana" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostOffice">
+      <http:operation location="/GetPostOffice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GeographicalInfoWebServiceHttpPost" type="tns:GeographicalInfoWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetCountry">
+      <http:operation location="/GetCountry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivision">
+      <http:operation location="/GetDivision" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <http:operation location="/GetDistrict" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThana">
+      <http:operation location="/GetThana" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostOffice">
+      <http:operation location="/GetPostOffice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeographicalInfoWebService">
+    <wsdl:port name="GeographicalInfoWebServiceSoap" binding="tns:GeographicalInfoWebServiceSoap">
+      <soap:address location="http://192.168.1.232:1100/SharedData/SharedServices/GeographicalInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GeographicalInfoWebServiceSoap12" binding="tns:GeographicalInfoWebServiceSoap12">
+      <soap12:address location="http://192.168.1.232:1100/SharedData/SharedServices/GeographicalInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GeographicalInfoWebServiceHttpGet" binding="tns:GeographicalInfoWebServiceHttpGet">
+      <http:address location="http://192.168.1.232:1100/SharedData/SharedServices/GeographicalInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GeographicalInfoWebServiceHttpPost" binding="tns:GeographicalInfoWebServiceHttpPost">
+      <http:address location="http://192.168.1.232:1100/SharedData/SharedServices/GeographicalInfoWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="EntityId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EntityIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntityIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EntityIdSoapIn">
+    <wsdl:part name="parameters" element="tns:EntityId" />
+  </wsdl:message>
+  <wsdl:message name="EntityIdSoapOut">
+    <wsdl:part name="parameters" element="tns:EntityIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="EntityIdHttpGetIn">
+    <wsdl:part name="RequestId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EntityIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EntityIdHttpPostIn">
+    <wsdl:part name="RequestId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EntityIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="SendExistingEntitySoap">
+    <wsdl:operation name="EntityId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Sends Back an Existing Entity to the Requested Application</wsdl:documentation>
+      <wsdl:input message="tns:EntityIdSoapIn" />
+      <wsdl:output message="tns:EntityIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SendExistingEntityHttpGet">
+    <wsdl:operation name="EntityId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Sends Back an Existing Entity to the Requested Application</wsdl:documentation>
+      <wsdl:input message="tns:EntityIdHttpGetIn" />
+      <wsdl:output message="tns:EntityIdHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SendExistingEntityHttpPost">
+    <wsdl:operation name="EntityId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This Service Sends Back an Existing Entity to the Requested Application</wsdl:documentation>
+      <wsdl:input message="tns:EntityIdHttpPostIn" />
+      <wsdl:output message="tns:EntityIdHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendExistingEntitySoap" type="tns:SendExistingEntitySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EntityId">
+      <soap:operation soapAction="http://tempuri.org/EntityId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendExistingEntitySoap12" type="tns:SendExistingEntitySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EntityId">
+      <soap12:operation soapAction="http://tempuri.org/EntityId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendExistingEntityHttpGet" type="tns:SendExistingEntityHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="EntityId">
+      <http:operation location="/EntityId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendExistingEntityHttpPost" type="tns:SendExistingEntityHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="EntityId">
+      <http:operation location="/EntityId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SendExistingEntity">
+    <wsdl:port name="SendExistingEntitySoap" binding="tns:SendExistingEntitySoap">
+      <soap:address location="http://192.168.1.232:1100/EntityDirectory/EntityDirectory/SendExistingEntity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendExistingEntitySoap12" binding="tns:SendExistingEntitySoap12">
+      <soap12:address location="http://192.168.1.232:1100/EntityDirectory/EntityDirectory/SendExistingEntity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendExistingEntityHttpGet" binding="tns:SendExistingEntityHttpGet">
+      <http:address location="http://192.168.1.232:1100/EntityDirectory/EntityDirectory/SendExistingEntity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendExistingEntityHttpPost" binding="tns:SendExistingEntityHttpPost">
+      <http:address location="http://192.168.1.232:1100/EntityDirectory/EntityDirectory/SendExistingEntity.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
